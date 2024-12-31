@@ -4,26 +4,26 @@ import { MdEmail } from 'react-icons/md';
 
 
 
-// import Snow from "./components/snow";
-// import { useState, useEffect } from "react";
+import Snow from "./components/snow";
+import { useState, useEffect } from "react";
 
 export default function Home() {
-  // const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(true);
 
-  // useEffect(() => {
-  //   const handleResize = () => {
-  //     setIsMobile(window.innerWidth > 768); // 768px is Tailwind's md breakpoint
-  //   };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth > 768); // 768px is Tailwind's md breakpoint
+    };
     
-  //   handleResize();
-  //   window.addEventListener('resize', handleResize);
+    handleResize();
+    window.addEventListener('resize', handleResize);
     
-  //   return () => window.removeEventListener('resize', handleResize);
-  // }, []);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <main>
-      {/* {isMobile && <Snow />} */}
+      {isMobile && <Snow />}
       <section className="h-screen flex flex-col justify-center text-center">
         <h1 className="text-6xl font-thin md:text-8xl ">Jacob Ong</h1>
         <p className="text-xs font-extralight mt-2 md:text-lg bg-gradient-to-r from-[#fdfcfb] to-[#e2d1c3] bg-clip-text text-transparent">
