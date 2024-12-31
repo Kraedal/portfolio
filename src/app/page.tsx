@@ -2,8 +2,6 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-
-
 import Snow from "./components/snow";
 import { useState, useEffect } from "react";
 
@@ -23,14 +21,14 @@ export default function Home() {
 
   return (
     <main>
-      {isMobile && <Snow />}
+      {isMobile && <Snow />} 
       <section className="h-screen flex flex-col justify-center text-center">
-        <h1 className="text-6xl font-thin md:text-8xl ">Jacob Ong</h1>
-        <p className="text-xs font-extralight mt-2 md:text-lg bg-gradient-to-r from-[#fdfcfb] to-[#e2d1c3] bg-clip-text text-transparent">
+        <h1 className="text-7xl font-thin md:text-8xl ">Jacob Ong</h1>
+        <p className="text-sm font-extralight -mt-1 md:text-lg">
           Computer Science Student @ USLT 
         </p>
         {/* Icon list */}
-        <div className="flex flex-row justify-center mt-2 md:mt-8 gap-4">
+        <div className="flex flex-row justify-center mt-4 md:mt-8 gap-4">
         <a 
             href="https://github.com/kraedal" 
             target="_blank" 
@@ -58,3 +56,4 @@ export default function Home() {
     </main>
   );
 }
+// bg-gradient-to-r from-[#fdfcfb] to-[#e2d1c3] bg-clip-text text-transparent --> color gradient
