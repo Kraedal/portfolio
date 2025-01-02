@@ -1,25 +1,54 @@
 'use client'
-import { useEffect, useState } from 'react';
+import { useState, useEffect, useMemo } from 'react';
+import { Snowflake } from 'lucide-react';
 
-const Snow = () => {
-  const [snowflakes, setSnowflakes] = useState<{ id: number; left: number; animationDuration: number; delay: number }[]>([]);
+const useIsMobile = () => {
+  const [isMobile, setIsMobile] = useState(true);
 
   useEffect(() => {
-    const flakes = Array.from({ length: 50 }, (_, index) => ({
-      id: index,
-      left: Math.random() * 100,
-      animationDuration: 5 + Math.random() * 10,
-      delay: Math.random() * 5
-    }));
-    setSnowflakes(flakes);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth > 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  return isMobile;
+};
+
+const isDecember = () => {
+  const currentMonth = new Date().getMonth();
+  return currentMonth === 0; // December is 11 (0-based index)
+};
+
+const createFlakes = (count: number) => 
+  Array.from({ length: count }, (_, index) => ({
+    id: index,
+    left: Math.random() * 100,
+    animationDuration: 2 + Math.random() * 10,
+    delay: Math.random() * 0.2
+  }));
+
+const Snow = () => {
+  const [mounted, setMounted] = useState(false);
+  const isMobile = useIsMobile();
+  const snowflakes = useMemo(() => createFlakes(50), []);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted || !isMobile || !isDecember()) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none">
       {snowflakes.map((flake) => (
-        <div
+        <Snowflake
           key={flake.id}
-          className="absolute bg-[#fdfcfb] rounded-full opacity-70 w-2 h-2"
+          className="absolute opacity-50 text-[#fdfcfb]"
+          size={16}
           style={{
             left: `${flake.left}%`,
             animation: `fall ${flake.animationDuration}s linear ${flake.delay}s infinite`
@@ -29,10 +58,10 @@ const Snow = () => {
       <style jsx>{`
         @keyframes fall {
           0% {
-            transform: translateY(-10px);
+            transform: translateY(-10px) rotate(0deg);
           }
           100% {
-            transform: translateY(100vh);
+            transform: translateY(100vh) rotate(360deg);
           }
         }
       `}</style>

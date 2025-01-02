@@ -1,29 +1,13 @@
-'use client'
+
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 
-import Snow from "./components/snow";
-import { useState, useEffect } from "react";
-
 export default function Home() {
-  const [isMobile, setIsMobile] = useState(true);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth > 768); // 768px is Tailwind's md breakpoint
-    };
-    
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <main>
-      {isMobile && <Snow />} 
       <section className="h-screen flex flex-col justify-center text-center">
-        <h1 className="text-7xl font-thin md:text-8xl ">Jacob Ong</h1>
+        <h1 className="text-7xl font-thin md:text-8xl hover:sepia-[.25]">Jacob Ong</h1>
         <p className="text-sm font-extralight -mt-1 md:text-lg">
           Computer Science Student @ USLT 
         </p>
@@ -33,7 +17,7 @@ export default function Home() {
             href="https://github.com/kraedal" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-xl md:text-4xl hover:text-gray-400 transition-colors"
+            className="text-2xl md:text-4xl hover:text-gray-400 hover:mx-4 transition-all duration-500"
           >
             <FaGithub />
           </a>
@@ -41,13 +25,13 @@ export default function Home() {
             href="https://linkedin.com/in/jacob-ong" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-xl md:text-4xl hover:text-gray-400 transition-colors"
+            className="text-2xl md:text-4xl hover:text-gray-400 hover:mx-4 transition-all duration-500"
           >
             <FaLinkedin />
           </a>
           <a 
             href="mailto:sorianojacobong@gmail.com"
-            className="text-xl md:text-4xl hover:text-gray-400 transition-colors"
+            className="text-2xl md:text-4xl hover:text-gray-400 hover:mx-4 transition-all duration-500"
           >
             <MdEmail />
           </a>
