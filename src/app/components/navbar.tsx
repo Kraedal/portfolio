@@ -48,7 +48,7 @@ export default function Navbar() {
             href="https://ko-fi.com/kraedal" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-xl md:text-4xl hover:text-gray-400 transition-colors"
+            className="text-xl md:text-4xl hover:text-gray-400 transition-colors animate-pulse duration-100"
           >
         <SiKofi size={28} />
         </a>

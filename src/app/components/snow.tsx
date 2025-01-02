@@ -18,9 +18,9 @@ const useIsMobile = () => {
   return isMobile;
 };
 
-const isDecember = () => {
+const isWinter = () => {
   const currentMonth = new Date().getMonth();
-  return currentMonth === 0; // December is 11 (0-based index)
+  return currentMonth === 11 || currentMonth === 0; // December is 11 (0-based index)
 };
 
 const createFlakes = (count: number) => 
@@ -40,7 +40,7 @@ const Snow = () => {
     setMounted(true);
   }, []);
 
-  if (!mounted || !isMobile || !isDecember()) return null;
+  if (!mounted || !isMobile || !isWinter()) return null;
 
   return (
     <div className="fixed inset-0 pointer-events-none">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Raleway, Cabin } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/navbar";
-import Snow from "./components/snow";
+
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${raleway.variable} ${cabin.variable}`} >
       <body>
-        <Snow />
+
         <Navbar />
         {children}
       </body>

@@ -1,17 +1,32 @@
+'use client';
+
 import Image from "next/image";
+import { Suspense } from "react";
+import AboutSkeleton from "./skeleton";
+import { motion } from "framer-motion";
 
 export default function Page() {
     return (
+        <Suspense fallback={<AboutSkeleton />}>
         <main>
-        <div className="mt-32 mx-8 mb-32 grid grid-cols-1 md:grid-cols-2 gap-4 bg-black/70">
-            <section className="col-span-1 min-h-96 bg-muted lg:ml-28">
+        <div className="mt-32 mx-8 mb-32 grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#0a0a0a]/50  shadow-white/10 shadow-sm rounded-xl ">
+            <motion.section 
+            className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
+            initial={{ x: -1000 }}
+            animate={{ x: 0 }}
+            transition={{ 
+                duration: .5,
+                ease: "easeOut"
+                
+            }}>
                 <Image
                     src="/images/catro.png"
                     alt="Jacob Ong"
                     width={300}
                     height={300}
-                    className="rounded-full hover:sepia-[.25]">
-                </Image>
+                    className="rounded-full hover:sepia-[.25] justify-self-center lg:justify-self-start"
+                    loading="eager"
+                />
                 <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">A Little About me</h1>
                 <h1 className="text-3xl text-left font-black text-gray-200 mx-5 mb-8">Hi, I&apos;m Jacob!</h1>
                 <p className="mx-5 text-gray-400">
@@ -33,8 +48,16 @@ export default function Page() {
 
 
 
-            </section>
-            <section className="col-span-1  min-h-96 lg:mr-28">
+            </motion.section>
+            <motion.section 
+            className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
+            initial={{ x: 1000 }}
+            animate={{ x: 0 }}
+            transition={{ 
+                duration: .5,
+                ease: "easeOut"
+                
+            }}>
             <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">Achievements</h1>
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">National Participant <span className="font-thin text-xs">&#64;</span> HACK4GOV Finals</p>
                 <p className="mx-5 text-sm mb-4 text-gray-400">October 3, 2024</p>
@@ -43,11 +66,12 @@ export default function Page() {
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">Startup Champion <span className="font-thin text-xs">&#64;</span> iDeaTech Challenge 2023</p>
                 <p className="mx-5 text-sm text-gray-400">September 20, 2023</p>
             
-            </section>
+            </motion.section>
         </div>
         <footer className="flex justify-center items-center h-16 bg-white/5">
             <p className="text-sm text-gray-400">Skibidi Skibidi Hawk Tuah Hawk</p>
         </footer>
         </main>
+        </Suspense>
     );
 }

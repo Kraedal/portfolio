@@ -27,5 +27,23 @@ html {
  
 h1 {
   font-family: var(--font-cabin);
-  
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #161616;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #0a0a0a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #a0a0a0;
 }
