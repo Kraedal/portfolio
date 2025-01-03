@@ -14,10 +14,10 @@ export default function Page() {
             className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
             initial={{ x: -1000 }}
             animate={{ x: 0 }}
+            exit={{ x: -1000 }}
             transition={{ 
                 duration: .5,
-                ease: "easeOut"
-                
+                ease: "easeInOut",
             }}>
                 <Image
                     src="/images/catro.png"
@@ -53,9 +53,10 @@ export default function Page() {
             className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
             initial={{ x: 1000 }}
             animate={{ x: 0 }}
+            exit={{ x: 1000 }}
             transition={{ 
                 duration: .5,
-                ease: "easeOut"
+                ease: "easeInOut"
                 
             }}>
             <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">Achievements</h1>
@@ -68,8 +69,9 @@ export default function Page() {
             
             </motion.section>
         </div>
-        <footer className="flex justify-center items-center h-16 bg-white/5">
-            <p className="text-sm text-gray-400">Skibidi Skibidi Hawk Tuah Hawk</p>
+        <footer className="flex justify-center items-center h-32 bg-white/5">
+            <p className="text-sm text-gray-400">  </p>
+        &copy; {new Date().getFullYear()} Jacob Ong. All rights reserved.
         </footer>
         </main>
         </Suspense>

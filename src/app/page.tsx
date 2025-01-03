@@ -2,7 +2,8 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
-import Snow from './components/snow';
+// import Snow from './components/snow';
+import Star from './components/star';
 
 const container = {
   hidden: { opacity: 0 },
@@ -16,15 +17,29 @@ const container = {
 };
 
 const item = {
-  hidden: { y: 400, opacity: 0 },
-  show: { y: 0, opacity: 1 }
+  hidden: { 
+    y: 20, 
+    opacity: 0 
+  },
+  show: { 
+    y: 0, 
+    opacity: 1,
+    transition: {
+      duration: 0.5,
+      ease: "easeOut"
+    }
+  },
+  exit: { 
+    y: -20, 
+    opacity: 0 
+  }
 };
 
 export default function Home() {
 
   return (
-    <main>
-      <Snow />
+    <main>  
+      <Star />
       <motion.section 
         className="h-screen flex flex-col justify-center text-center"
         initial={{ y: -1000 }}
@@ -38,7 +53,7 @@ export default function Home() {
         }}
       >
       <motion.h1
-        initial={{ scale: 0.5, opacity: 0 }}
+        initial={{ scale: 0.5, opacity: 0.5 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 0.5, duration: 0.5, ease: "linear" }}
         className="text-7xl font-thin md:text-8xl hover:sepia-[.25]"
@@ -58,6 +73,7 @@ export default function Home() {
           variants={container}
           initial="hidden"
           animate="show"
+          exit= "exit"
           className="flex flex-row justify-center mt-4 md:mt-8 gap-4"
         >
           <motion.a 
@@ -87,6 +103,9 @@ export default function Home() {
           </motion.a>
         </motion.div>
       </motion.section>
+
+
+
       <section className='h-screen flex flex-col justify-center text-center'>
         <h1>HELLO</h1>
       </section>
