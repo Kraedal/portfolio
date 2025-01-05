@@ -24,8 +24,7 @@ export default function Page() {
                     alt="Jacob Ong"
                     width={300}
                     height={300}
-                    className="rounded-full hover:sepia-[.25] justify-self-center lg:justify-self-start"
-                    loading="eager"
+                    className="rounded-full hover:sepia-[.25] justify-self-center lg:justify-self-star animate-pulse"
                 />
                 <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">A Little About me</h1>
                 <h1 className="text-3xl text-left font-black text-gray-200 mx-5 mb-8">Hi, I&apos;m Jacob!</h1>
@@ -45,9 +44,6 @@ export default function Page() {
                 <p className="mx-5 text-sm mb-4 text-gray-400">Jun, 2024 - Jul, 2024</p>
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">Chief Technology Officer <span className="font-thin text-xs">&#64;</span> Pantreat</p>
                 <p className="mx-5 text-sm text-gray-400">Sep, 2023 - Present</p>
-
-
-
             </motion.section>
             <motion.section 
             className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
@@ -59,14 +55,13 @@ export default function Page() {
                 ease: "easeInOut"
                 
             }}>
-            <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">Achievements</h1>
+             <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">Achievements</h1>
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">National Participant <span className="font-thin text-xs">&#64;</span> HACK4GOV Finals</p>
                 <p className="mx-5 text-sm mb-4 text-gray-400">October 3, 2024</p>
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">Regional Champion <span className="font-thin text-xs">&#64;</span> HACK4GOV</p>
                 <p className="mx-5 text-sm mb-4 text-gray-400">August 29, 2024</p>
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">Startup Champion <span className="font-thin text-xs">&#64;</span> iDeaTech Challenge 2023</p>
                 <p className="mx-5 text-sm text-gray-400">September 20, 2023</p>
-            
             </motion.section>
         </div>
         <footer className="flex justify-center items-center h-32 bg-white/5">
