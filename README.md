@@ -1,10 +1,10 @@
 # My Portfolio
 
-A minimal and modern portfolio website built with Next.js 14 and Tailwind CSS.
+A minimal and modern portfolio website built with Next.js 15 and Tailwind CSS.
 
 ## Tech Stack
 
-- **Framework:** Next.js 14
+- **Framework:** Next.js 15.1.3
 - **Styling:** Tailwind CSS
 - **Animations:** Framer Motion
 - **Icons:** React Icons and Lucide

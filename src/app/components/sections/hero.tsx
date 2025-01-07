@@ -4,7 +4,9 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 // import { MdEmail } from 'react-icons/md';
 import { useRef } from 'react';
 import { Container } from '../container';
-import { ChevronDown } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+
 
 
 
@@ -18,11 +20,11 @@ export default function Hero() {
     const opacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 1, 0]);
 
  return (
-<div className="bg-background text-white">
+<div className="bg-background text-[foreground]">
       <motion.div
         style={{ opacity }}
         ref={videoContainerRef}
-        className="absolute -top-[--header-height] left-0 h-[178vh] w-full"
+        className="absolute -top-[--header-height] left-0 h-[200vh] w-full"
       >
 
         <video
@@ -46,9 +48,12 @@ export default function Hero() {
           exit="hidden"
           animate="hidden"
           viewport={{ amount: 0.98 }}
+          transition={{
+            delay: .1
+          }}
         >
           <div className='flex flex-col items-left justify-center'>
-          <h1 className="mb-10 text-7xl font-bold md:text-8xl">
+          <h1 className="mb-4 lg:mb-10 text-7xl font-bold md:text-8xl">
             Jacob Ong
           </h1>
           <p className="text-xl font-medium md:text-3xl mb-32">
@@ -56,10 +61,12 @@ export default function Hero() {
           </p>
 
           </div>
+          <Link href='/about'>
           <div className='flex flex-row gap-2'>
           <p className="font-thin">Learn more about me </p>
-          <ChevronDown size={24} className="animate-bounce mt-1" />
+          <ChevronRight size={24} className='opacity-75'/>
           </div>
+          </Link>
 
         </motion.div>
       </Container>

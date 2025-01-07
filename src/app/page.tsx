@@ -1,7 +1,8 @@
 
 import Snow from './components/snow';
 import Hero from './components/sections/hero';
-import { Usps } from './components/sections/intro';
+import Intro  from './components/sections/intro';
+import Project from './components/sections/projects';
 
 export default function Home() {
 
@@ -9,15 +10,9 @@ export default function Home() {
     <main>  
       <Snow />
       <Hero />
-      <Usps />
-
-
-      
-
-
-      <section className='h-screen flex flex-col justify-center text-center'>
-        <h1>HELLO</h1>
-      </section>
+      <Intro />
+      <Project />
+  
     </main>
   );
 }

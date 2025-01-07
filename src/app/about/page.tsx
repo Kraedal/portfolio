@@ -5,7 +5,10 @@ import { Suspense } from "react";
 import AboutSkeleton from "./skeleton";
 import { motion } from "framer-motion";
 
+
+
 export default function Page() {
+    
     return (
         <Suspense fallback={<AboutSkeleton />}>
         <main>
@@ -16,8 +19,9 @@ export default function Page() {
             animate={{ x: 0 }}
             exit={{ x: -1000 }}
             transition={{ 
-                duration: .5,
-                ease: "easeInOut",
+                duration: .67,
+                ease: "easeIn",
+                delay:.3,
             }}>
                 <Image
                     src="/images/catro.png"
@@ -28,15 +32,18 @@ export default function Page() {
                 />
                 <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">A Little About me</h1>
                 <h1 className="text-3xl text-left font-black text-gray-200 mx-5 mb-8">Hi, I&apos;m Jacob!</h1>
+
                 <p className="mx-5 text-gray-400">
                     I am taking my bachelor&apos;s at the University of Saint Louis Tuguegarao, majoring in Computer Science.
                     My late teacher inspired me to pursue this path of my own volition, and curiosity has led me to places I thought were impossible to reach. 
                     Here I am, learning and growing, and I am excited to see where this journey will take me. I have taken an interest in creating and designing websites
                     using tools like React, Next.js, and Tailwind CSS. I also use Figma and Sketch to design my projects.
-                    <br />
-                    <br />  
+                </p>
+
+                <p className="mx-5 mt-8 text-gray-400">
                     Outside academic activities, I write poems and essays for our school publication. I also play guitar and piano sometimes, and I love to play gacha games like Fate/Grand Order and Girls Frontline 2: Exilium. I also enjoy anime and manga, and I love to read in my free time.
                 </p>
+
                 <h1 className="text-lg text-gray-500 mx-5 my-5 uppercase font-medium">Experience</h1>
                 <p className="text-md text-left font-bold text-gray-200 mx-5 mb-2">Web Developer <span className="font-thin text-xs">&#64;</span> Freelancee</p>
                 <p className="mx-5 text-sm mb-4 text-gray-400">Aug, 2024 - Present</p>
@@ -51,8 +58,9 @@ export default function Page() {
             animate={{ x: 0 }}
             exit={{ x: 1000 }}
             transition={{ 
-                duration: .5,
-                ease: "easeInOut"
+                duration: .67,
+                ease: "easeIn",
+                delay: .3,
                 
             }}>
              <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">Achievements</h1>
