@@ -1,7 +1,8 @@
 'use client'
-import FadeIn from "../components/fade-in";
+
 import { Container } from "../components/container";
 import { motion } from "framer-motion";
+import { FadeIn } from "../components/fade";
 
 export default function Page() {
     return (
