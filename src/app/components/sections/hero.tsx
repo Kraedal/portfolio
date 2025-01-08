@@ -7,10 +7,6 @@ import { Container } from '../container';
 import { ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 
-
-
-
-
 export default function Hero() {
     const videoContainerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({

@@ -12,16 +12,16 @@ export default function Page() {
     return (
         <Suspense fallback={<AboutSkeleton />}>
         <main>
-        <div className="mt-32 mx-8 mb-32 grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#0a0a0a]/50  shadow-white/10 shadow-sm rounded-xl ">
+        <div className="mt-32 mx-8 lg:mx-32 mb-32 grid grid-cols-1 md:grid-cols-2 gap-4 bg-[#0a0a0a]/50  shadow-white/10 shadow-sm rounded-xl ">
             <motion.section 
-            className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
-            initial={{ x: -1000 }}
-            animate={{ x: 0 }}
-            exit={{ x: -1000 }}
+            className="col-span-1 min-h-96 bg-muted mx-4 lg:mx-8 my-8"
+            initial={{ x: -1000, opacity: 0 }}
+            animate={{ x: 0, opacity: [.3,.67,1] }}
+            exit={{ x: -1000, opacity: 0 }}
             transition={{ 
-                duration: .67,
+                duration: 1,
                 ease: "easeIn",
-                delay:.3,
+                delay:.03,
             }}>
                 <Image
                     src="/images/catro.png"
@@ -53,14 +53,14 @@ export default function Page() {
                 <p className="mx-5 text-sm text-gray-400">Sep, 2023 - Present</p>
             </motion.section>
             <motion.section 
-            className="col-span-1 min-h-96 bg-muted lg:ml-28 my-8"
-            initial={{ x: 1000 }}
-            animate={{ x: 0 }}
-            exit={{ x: 1000 }}
+            className="col-span-1 min-h-96 bg-muted mx-4 lg:mx-8 my-8"
+            initial={{ x: 1000, opacity: 0 }}
+            animate={{ x: 0, opacity: [.3,.67,1] }}
+            exit={{ x: 1000, opacity: 0 }}
             transition={{ 
-                duration: .67,
+                duration: 1,
                 ease: "easeIn",
-                delay: .3,
+                delay: .03,
                 
             }}>
              <h1 className="text-lg text-gray-500 mx-5 my-4 uppercase font-medium">Achievements</h1>

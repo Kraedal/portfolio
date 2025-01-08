@@ -75,7 +75,7 @@ const Star = () => {
   return (
     <canvas 
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full -z-10 bg-black"
+      className="fixed inset-0 w-full h-full [z-10] pointer-events-none"
       aria-hidden="true"
     />
   );
