@@ -26,7 +26,7 @@ const FadeLeft = ({ children }: Props) => {
     <motion.div
     initial={{ opacity: 0, x: -100 }}
     whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: false, amount: 0.1 }} // Trigger animation when 50% of the element is in view
+    viewport={{ once: true, amount: 0.1 }} // Trigger animation when 50% of the element is in view
     transition={{
       duration: 1, // Smooth fade duration
       ease: "easeOut", // Use a smoother easing function
@@ -42,10 +42,11 @@ const FadeRight = ({ children }: Props) => {
     <motion.div
     initial={{ opacity: 0, x: 100 }}
     whileInView={{ opacity: [.3,.67,1], x: 0 }}
-    viewport={{ once: false, amount: 0.1 }} // Trigger animation when 50% of the element is in view
+    viewport={{ once: true, amount: 0.1 }} // Trigger animation when 50% of the element is in view
     transition={{
       duration: 1, // Smooth fade duration
-      ease: "easeOut", // Use a smoother easing function
+      ease: "easeOut",
+       // Use a smoother easing function
     }}
     >
       {children}

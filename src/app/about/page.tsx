@@ -72,10 +72,6 @@ export default function Page() {
                 <p className="mx-5 text-sm text-gray-400">September 20, 2023</p>
             </motion.section>
         </div>
-        <footer className="flex justify-center items-center h-32 bg-white/5">
-            <p className="text-sm text-gray-400">  </p>
-        &copy; {new Date().getFullYear()} Jacob Ong. All rights reserved.
-        </footer>
         </main>
         </Suspense>
     );
